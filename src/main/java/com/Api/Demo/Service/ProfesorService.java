@@ -30,7 +30,12 @@ public class ProfesorService {
     }
 
     public boolean actualizar(Profesor profesor) {
-
+        for (int i = 0 ; i < listaProfesores.size() ; i++) {
+            if(listaProfesores.get(i).equals(profesor)) {
+                listaProfesores.add(i, profesor);
+                return true;
+            } 
+        }
         return false;
     }
 
