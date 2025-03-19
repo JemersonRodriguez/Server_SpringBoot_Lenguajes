@@ -2,8 +2,11 @@ package com.Api.Demo.Service;
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Service;
+
 import com.Api.Demo.Model.Profesor;
 
+@Service
 public class ProfesorService {
     private ArrayList<Profesor> listaProfesores;
 
@@ -15,37 +18,35 @@ public class ProfesorService {
         return listaProfesores;
     }
 
-    public boolean agregar(Profesor profesor) {
+    public Profesor agregar(Profesor profesor) {
         listaProfesores.add(profesor);
-        return true;
+        return profesor;
     }
 
-    public String consultar(Profesor profesor) {
+    public Profesor consultar(Profesor profesor) {
         for (int i = 0; i < listaProfesores.size(); i++) {
             if (listaProfesores.get(i).equals(profesor)) {
-                return listaProfesores.get(i).toString();
+                return listaProfesores.get(i);
             }
         }
         return null;
     }
 
-    public boolean actualizar(Profesor profesor) {
+    public Profesor actualizar(String cedula , Profesor profesor) {
         for (int i = 0 ; i < listaProfesores.size() ; i++) {
-            if(listaProfesores.get(i).equals(profesor)) {
+            if(listaProfesores.get(i).getCedula().equals(cedula)) {
                 listaProfesores.add(i, profesor);
-                return true;
+                return listaProfesores.get(i);
             } 
         }
-        return false;
+        return null;
     }
 
-    public boolean eliminar(Profesor profesor) {
+    public void eliminar(Profesor profesor) {
         for (int i = 0; i < listaProfesores.size(); i++) {
             if (listaProfesores.get(i).equals(profesor)) {
                 listaProfesores.remove(i);
-                return true;
             }
         }
-        return false;
     }
 }
