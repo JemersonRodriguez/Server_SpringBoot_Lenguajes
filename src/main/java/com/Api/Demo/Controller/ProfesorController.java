@@ -45,7 +45,12 @@ public class ProfesorController {
         return profesorService.actualizar(cedula , profesor);
     }
 
-    @DeleteMapping("")
-    public void eliminar() {}
+    @DeleteMapping("/{cedula}")
+    public void eliminar(@PathVariable String cedula) {
+        profesorService.eliminar(cedula);
+    }
+
+    //Endpoint Query Params osea un Param Opcional
+    
     
 }

@@ -33,18 +33,19 @@ public class ProfesorService {
     }
 
     public Profesor actualizar(String cedula , Profesor profesor) {
+        profesor.setCedula(cedula); //Para añadir la prop enviada en la Request y poder unrila al objeto
         for (int i = 0 ; i < listaProfesores.size() ; i++) {
             if(listaProfesores.get(i).getCedula().equals(cedula)) {
-                listaProfesores.add(i, profesor);
+                listaProfesores.set(i, profesor);
                 return listaProfesores.get(i);
             } 
         }
         return null;
     }
 
-    public void eliminar(Profesor profesor) {
+    public void eliminar(String cedula) {
         for (int i = 0; i < listaProfesores.size(); i++) {
-            if (listaProfesores.get(i).equals(profesor)) {
+            if (listaProfesores.get(i).getCedula().equals(cedula)) {
                 listaProfesores.remove(i);
             }
         }
