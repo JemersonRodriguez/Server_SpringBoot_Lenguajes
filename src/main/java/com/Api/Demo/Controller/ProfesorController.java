@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class ProfesorController {
     @GetMapping("/")
-    public String listar(@RequestParam String param) {
+    public String listar() {
         return new String();
     }
     
