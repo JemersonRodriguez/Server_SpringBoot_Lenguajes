@@ -23,9 +23,9 @@ public class ProfesorService {
         return profesor;
     }
 
-    public Profesor consultar(Profesor profesor) {
+    public Profesor consultar(String cedula) {
         for (int i = 0; i < listaProfesores.size(); i++) {
-            if (listaProfesores.get(i).equals(profesor)) {
+            if (listaProfesores.get(i).getCedula().equals(cedula)) {
                 return listaProfesores.get(i);
             }
         }
