@@ -1,5 +1,5 @@
 package com.Api.Demo.DTO;
 
-public class ProfesorDTO {
-    
+public interface ProfesorDTO {
+
 }
